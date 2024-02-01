@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="/CSS/Style_View.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Threejs with loader</title>
+</head>
+
+<body>
+
+    <div id="topBar"></div>
+    <!-- <div id="bottomBar"></div> -->
+
+    <div class="position-container">
+        <div class="sub-container">
+            <div id="Title_Position_cliente">Cliente</div>
+            <div id="Text_Position_cliente">VERTIV</div>
+        </div>
+
+        <div class="sub-container">
+            <div id="Title_Position_proyecto">Proyecto</div>
+            <div id="Text_Position_proyecto">DA250</div>
+        </div>
+
+        <div class="sub-container">
+            <div>
+                <button id="Button_files" class="button-9" onclick="loadSTL()" disabled>Cargar STL</button>
+            </div>
+        </div>
+
+        <div class="sub-container">
+            <div id="Center_Input">
+                <input type="file" class="Text_Input" id="stlFileInput" accept=".stl" />
+            </div>
+        </div>
+
+        <div class="position-container-title">
+            <div id="Title_Position">PLANTA 2</div>
+        </div>
+
+        <div class="date-container">
+            <input type="date" class="date__input" id="fecha" name="fecha" disabled/>
+        </div>
+    </div>
+
+    <script>
+        $( document ).ready(function() {
+        
+            var now = new Date();
+        
+            var day = ("0" + now.getDate()).slice(-2);
+            var month = ("0" + (now.getMonth() + 1)).slice(-2);
+        
+            var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+            $("#fecha").val(today);
+        });
+        </script>    
+
+    <script>
+        var input = document.getElementById("stlFileInput");
+        var enviar = document.getElementById("Button_files");
+        input.addEventListener('change', check);
+
+        function check(event) {
+            var verificar = input.files.length == 0 ? true : false;
+            enviar.disabled = verificar;
+        }
+
+    </script>
+
+    <!-- Contenedor para los canvas renderizados -->
+    <div id="canvasContainer"></div>
+
+    <!-- Nuevo contenedor para la tabla responsiva -->
+    <div id="tableContainer"></div>
+
+    <!-- Nuevo contenedor para la tabla responsiva -->
+    <div id="tableContainer1"></div>
+
+    <script src="../threejs/stats.min.js"></script>
+    <script type="module" src="../JS/JavaScript.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+body {
+    font-family: Monospace;
+    background-color: #ffffff;
+    margin: 0px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+#info {
+    color: #fff;
+    position: absolute;
+    bottom: 63%;
+    /* Ajusta la posición vertical */
+    left: 7.5%;
+    /* Centra horizontalmente */
+    transform: translateX(-50%);
+    /* Ajusta para centrar horizontalmente */
+    z-index: 100;
+    text-align: center;
+}
+
+#part {
+    color: #00b2e2;
+    font-size: 20px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+#topBar,
+#bottomBar {
+    background-color: #198CA9;
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#bottomBar {
+    top: auto;
+    bottom: 0;
+}
+
+.position-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 30px;
+    top: 55px;
+}
+
+.position-container-title {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Lexend Deca', sans-serif;
+    text-align: center;
+    position: relative;
+    margin: 0 7%; /* Ajusta el margen según tu preferencia */
+}
+
+.sub-container {
+    margin-right: 20px; /* Ajusta el margen según tu preferencia */
+}
+
+#Title_Position {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 35px;
+    margin: 0 auto; /* Centra horizontalmente el texto */
+}
+
+#Title_Position_cliente,
+#Title_Position_proyecto {
+    position: relative;
+    color: #198CA9;
+    font-size: 18px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+#Text_Position_cliente,
+#Text_Position_proyecto {
+    position: relative;
+    color: #000000;
+    font-size: 18px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.Text_Input {
+    position: relative;
+    color: #000000;
+    font-size: 15px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+#Center_Input {
+    position: relative;
+    top: 15px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #8ebf42;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button:hover {
+    background-color: #5cbf8e;
+}
+
+.button:active {
+    background-color: #3e8e5c;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.button-9 {
+    appearance: button;
+    backface-visibility: hidden;
+    background-color: #107591;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 100%;
+    height: 30px;
+    line-height: 1.15;
+    margin: 12px 0 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s,box-shadow .08s ease-in;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    width: auto;
+  }
+  
+  .button-9:disabled {
+    cursor: default;
+    background-color: rgb(180, 179, 179);
+  }
+  
+  .button-9:focus {
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+  }
+
+
+.table {
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 20px;
+}
+
+/* Estilos para los botones */
+button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #107591;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Lexend Deca', sans-serif;
+    border-radius: 6px;
+}
+
+.date-container {
+    position: relative;
+    text-align: right;
+    margin-top: 5px; /* Ajusta el margen superior según sea necesario */
+    width: auto;
+    height: auto;
+    left: 30%;
+}
+
+.date__input {
+    /* Agrega tus estilos personalizados para el input de fecha aquí */
+    background-color: #ffffff;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Lexend Deca', sans-serif;
+    color: #000000;
+    border: #ffffff;
+}
+

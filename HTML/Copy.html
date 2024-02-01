@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="/CSS/Copy.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script type="module" src="../JS/Copy.js"></script>
+    <title>Threejs with loader</title>
+</head>
+
+<body>
+
+    <div id="topBar"></div>
+    <!-- <div id="bottomBar"></div> -->
+
+    <div class="position-container">
+        <div class="sub-container">
+            <div class="position-container-title">
+                <div id="Title_Position">PLANTA 2</div>
+            </div>
+        </div>
+    </div>
+    <div class="position-container">
+        <!-- Primera parte: elementos pegados a la izquierda -->
+        <div class="left-container">
+            <div class="sub-container">
+                <div id="Title_Position_cliente">Cliente</div>
+                <div id="Text_Position_cliente">VERTIV</div>
+            </div>
+
+            <div class="sub-container">
+                <div id="Title_Position_proyecto">Proyecto</div>
+                <div id="Text_Position_proyecto">DA250</div>
+            </div>
+
+            <!-- <div class="sub-container">
+                <div>
+                    <button id="Button_files" class="button-9" onclick="loadSTL()" disabled>Cargar STL</button>
+                </div>
+            </div>
+
+            <div class="sub-container">
+                <div id="Center_Input">
+                    <input type="file" class="Text_Input" id="stlFileInput" accept=".stl" />
+                </div>
+            </div> -->
+        </div>
+
+        <!-- Segunda parte: elemento pegado a la derecha -->
+        <div class="right-container">
+            <div class="sub-container">
+                <div class="date-container">
+                    <input type="date" class="date__input" id="fecha" name="fecha" disabled />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="table">
+        <div class="table_header">
+            <p></p>
+            <div>
+                <input class="holder_input" placeholder="product" />
+                <button class="button-9" onclick="openForm()">+ Add New </button>
+            </div>
+        </div>
+    </div>
+    <div class="table_section">
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th>Pieza</th>
+                    <th>Nombre</th>
+                    <th>Fabricado</th>
+                    <th>Embarcado</th>
+                    <th>Inventario Por Pintar</th>
+                    <th>Inventario Pintado</th>
+                    <th>Accciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td><img src="/Images/test.jpg" /></td>
+                    <td>Camera</td>
+                    <td>Camera</td>
+                    <td>Camera</td>
+                    <td>Camera</td>
+                    <td>zazpaz5@gmail.com</td>
+                    <td>
+                        <button class="button_edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="button_delet"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+        <div class="pagination">
+            <button onclick="prevPage()">Anterior</button>
+            <button onclick="nextPage()">Siguiente</button>
+        </div>
+    </div>
+    <!-- <div class="pagination">
+        <div><i class="fa-solid fa-angles-left"></i></div>
+        <div><i class="fa-solid fa-angle-left"></i></div>
+        <div>1</div>
+        <div>2</div>
+        <div><i class="fa-solid fa-angle-right"></i></div>
+        <div><i class="fa-solid fa-angles-right"></i></div>
+    </div> -->
+
+    <!-- Ventana emergente -->
+    <div class="overlay" id="overlay" onclick="closeForm()"></div>
+    <div class="popup" id="popup">
+        <form id="formDatos">
+            <label for="file">Nueva Pieza:</label>
+            <input type="file" class="Text_Input" name="file" id="fileInput" accept=".stl" required><br>
+
+            <label for="name">Nombre:</label>
+            <input type="text" id="nameInput" name="name" required><br>
+
+            <label for="fabricated">Cantidad fabricado:</label>
+            <input type="number" id="fabricatedInput" name="fabricated" required min="0"><br>
+
+            <label for="shipped">Cantidad embarcado:</label>
+            <input type="number" id="shippedInput" name="shipped" required min="0"><br>
+
+            <label for="inventoryToPaint">Cantidad inventario por pintar:</label>
+            <input type="number" id="inventoryToPaintInput" name="inventoryToPaint" required min="0"><br>
+
+            <label for="paintedInventory">Cantidad inventario pintado:</label>
+            <input type="number" id="paintedInventoryInput" name="paintedInventory" required min="0"><br>
+
+            <button type="button" onclick="saveForm()">Guardar</button>
+            <button type="button" onclick="closeForm()">Cancelar</button>
+        </form>
+    </div>
+
+    <!-- Ventana emergente editar-->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeEditModal()">&times;</span>
+          <label for="fov">Campo de visualización:</label>
+          <input type="range" id="fov" name="fov" min="1" max="100" value="10">
+          <button onclick="saveChanges()">Guardar</button>
+          <button onclick="closeEditModal()">Salir</button>
+        </div>
+      </div>
+      
+
+    <script>
+        function openForm() {
+            document.getElementById("overlay").style.display = "block";
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("popup").style.display = "none";
+        }
+
+        function saveForm() {
+            const formData = {
+                name: document.getElementById('nameInput').value,
+                fabricated: document.getElementById('fabricatedInput').value,
+                shipped: document.getElementById('shippedInput').value,
+                inventoryToPaint: document.getElementById('inventoryToPaintInput').value,
+                paintedInventory: document.getElementById('paintedInventoryInput').value,
+            };
+            closeForm();
+            agregarFilaATabla(formData);
+        }     
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            var now = new Date();
+
+            var day = ("0" + now.getDate()).slice(-2);
+            var month = ("0" + (now.getMonth() + 1)).slice(-2);
+
+            var today = now.getFullYear() + "-" + (month) + "-" + (day);
+            $("#fecha").val(today);
+        });
+    </script>
+    <!-- <script>
+        // Define el tamaño de la página
+        const pageSize = 4;
+        // Obtiene todas las filas de la tabla
+        const rows = document.querySelectorAll("#myTable tbody tr");
+        console.log(rows);
+        let currentPage = 0;
+
+        // Función para mostrar las filas de la página actual
+        function showPage(page) {
+            // Oculta todas las filas
+            rows.forEach(row => row.style.display = "none");
+            // Calcula el rango de filas a mostrar
+            const startIndex = page * pageSize;
+            const endIndex = startIndex + pageSize;
+            // Muestra solo las filas en el rango
+            for (let i = startIndex; i < endIndex && i < rows.length; i++) {
+                rows[i].style.display = "";
+            }
+        }
+
+        // Función para ir a la página anterior
+        function prevPage() {
+            if (currentPage > 0) {
+                currentPage--;
+                showPage(currentPage);
+            }
+        }
+
+        // Función para ir a la página siguiente
+        function nextPage() {
+            if (currentPage < Math.ceil(rows.length / pageSize) - 1) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        }
+
+        // Mostrar la primera página al cargar
+        showPage(currentPage);
+    </script> -->
+    <script src="../threejs/stats.min.js"></script>
+</body>
+
+</html>

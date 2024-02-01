@@ -1,0 +1,450 @@
+body {
+    font-family: Monospace;
+    background-color: #ffffff;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+#info {
+    color: #fff;
+    position: absolute;
+    bottom: 63%;
+    /* Ajusta la posición vertical */
+    left: 7.5%;
+    /* Centra horizontalmente */
+    transform: translateX(-50%);
+    /* Ajusta para centrar horizontalmente */
+    z-index: 100;
+    text-align: center;
+}
+
+#part {
+    color: #00b2e2;
+    font-size: 20px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+#topBar,
+#bottomBar {
+    background-color: #198CA9;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#bottomBar {
+    top: auto;
+    bottom: 0;
+}
+
+.position-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    left: 30px;
+    top: 35px;
+}
+
+.left-container,
+.right-container {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.position-container-title {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+}
+
+.sub-container {
+    margin-right: 20px;
+    /* Ajusta el margen según tu preferencia */
+}
+
+/* Puedes ajustar estilos adicionales según sea necesario */
+.left-container {
+    flex-grow: 1;
+    /* Que ocupe todo el espacio disponible en la izquierda */
+}
+
+.right-container {
+    /* Ajusta según sea necesario */
+}
+
+
+
+#Title_Position {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 25px;
+}
+
+#Title_Position_cliente,
+#Title_Position_proyecto {
+    position: relative;
+    color: #198CA9;
+    font-size: 18px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+#Text_Position_cliente,
+#Text_Position_proyecto {
+    position: relative;
+    color: #000000;
+    font-size: 18px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.Text_Input {
+    position: relative;
+    color: #000000;
+    font-size: 15px;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+#Center_Input {
+    position: relative;
+    top: 15px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #8ebf42;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button:hover {
+    background-color: #5cbf8e;
+}
+
+.button:active {
+    background-color: #3e8e5c;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.button-9 {
+    appearance: button;
+    backface-visibility: hidden;
+    background-color: #107591;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 100%;
+    height: 30px;
+    line-height: 1.15;
+    margin: 10px 0 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0 10px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s, box-shadow .08s ease-in;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    width: auto;
+}
+
+.button-9:disabled {
+    cursor: default;
+    background-color: rgb(180, 179, 179);
+}
+
+.button-9:focus {
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+/* Estilos para los botones */
+button {
+    margin: 5px;
+    padding: 10px;
+    background-color: #107591;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Lexend Deca', sans-serif;
+    border-radius: 6px;
+}
+
+.date-container {
+    position: relative;
+    text-align: right;
+    margin-top: 5px;
+    /* Ajusta el margen superior según sea necesario */
+    width: auto;
+    height: auto;
+}
+
+.date__input {
+    /* Agrega tus estilos personalizados para el input de fecha aquí */
+    background-color: #ffffff;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Lexend Deca', sans-serif;
+    color: #000000;
+    border: #ffffff;
+}
+
+.table {
+    width: 100%;
+    position: relative;
+    top: 25px;
+}
+
+.table_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+    flex-wrap: wrap;
+}
+
+.table_header p {
+    color: #000000;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.add_new {
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #0298cf;
+}
+
+.holder_input {
+    padding: 10px 20px;
+    margin: 0 10px;
+    outline: none;
+    border: 1px solid #0298cf;
+    border-radius: 6px;
+    color: #0298cf;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+.table_section {
+    height: auto;
+    overflow: auto;
+    position: relative;
+    top: 30px;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    min-width: 900px;
+    border-collapse: collapse;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f6f9fc;
+    color: #8493a5;
+    font-size: 15px;
+}
+
+th,
+td {
+    border-bottom: 1px solid #dddddd;
+    padding: 10px 20px;
+    word-break: break-all;
+    text-align: center;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+td img {
+    height: 190px;
+    width: 250px;
+    object-fit: cover;
+}
+
+tr:hover td {
+    color: #0298cf;
+    cursor: pointer;
+    background-color: #f6f9fc;
+}
+
+::placeholder {
+    color: #0298cf
+}
+
+.button_edit,
+.button_delet {
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+td button:nth-child(1) {
+    background-color: #0298cf;
+}
+
+td button:nth-child(2) {
+    background-color: #f80000;
+}
+
+::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0, 3);
+}
+
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0, 3);
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.pagination div {
+    padding: 10px;
+    border: 2px solid #d5d0d0;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0298cf;
+    color: #ffffff;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0, 75);
+    margin: 25px 5px;
+    cursor: pointer;
+}
+
+/* Estilos para la ventana emergente */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-family: 'Lexend Deca', sans-serif;
+    max-width: 400px;
+    width: 100%;
+}
+
+.popup form {
+    text-align: left;
+}
+
+.popup label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.popup input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.popup button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.popup button.cancel {
+    background-color: #808080;
+}
+
+.popup-header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" type="text/css" href="/CSS/Copy_View.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="module" src="../JS/Copy_View.js"></script>
+    <title>Threejs with loader</title>
+</head>
+
+<body>
+
+    <div id="topBar"></div>
+    <!-- <div id="bottomBar"></div> -->
+
+    <div class="position-container">
+        <div class="sub-container">
+            <div class="position-container-title">
+                <div id="Title_Position">PLANTA 2</div>
+            </div>
+        </div>
+    </div>
+    <div class="position-container">
+        <!-- Primera parte: elementos pegados a la izquierda -->
+        <div class="left-container">
+            <div class="sub-container">
+                <div id="Title_Position_cliente">Cliente</div>
+                <div id="Text_Position_cliente">VERTIV</div>
+            </div>
+
+            <div class="sub-container">
+                <div id="Title_Position_proyecto">Proyecto</div>
+                <div id="Text_Position_proyecto">DA250</div>
+            </div>
+        </div>
+
+        <!-- Segunda parte: elemento pegado a la derecha -->
+        <div class="right-container">
+            <div class="sub-container">
+                <div class="date-container">
+                    <input type="date" class="date__input" id="fecha" name="fecha" disabled />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="table_section">
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th>Pieza</th>
+                    <th>Fabricado</th>
+                    <th>Embarcado</th>
+                    <th>Inventario Por Pintar</th>
+                    <th>Inventario Pintado</th>
+                    <th>Requerimiento</th>
+                    <th>Entregado</th>
+                    <th>Avance</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination">
+        <!-- <div><i class="fa-solid fa-angles-left"></i></div>
+        <div><i class="fa-solid fa-angle-left"></i></div>
+        <div></div>
+        <div><i class="fa-solid fa-angle-right"></i></div>
+        <div><i class="fa-solid fa-anagles-right"></i></div> -->
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            var now = new Date();
+            var day = ("0" + now.getDate()).slice(-2);
+            var month = ("0" + (now.getMonth() + 1)).slice(-2);
+            var today = now.getFullYear() + "-" + (month) + "-" + (day);
+            $("#fecha").val(today);
+
+
+        });
+    </script>
+
+    <script src="../threejs/stats.min.js"></script>
+    
+</body>
+
+</html>
